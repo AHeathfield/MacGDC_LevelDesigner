@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj44kaa67lmof"]
+
+[ext_resource type="Script" uid="uid://k7r2gnouydm0" path="res://Scenes/player.gd" id="1_v0iea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f60y1"]
+size = Vector2(16, 16)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_v0iea"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v0iea")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f60y1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.67451, 0, 0.235294, 1)
+scale = Vector2(16, 16)
+texture = SubResource("CanvasTexture_v0iea")
