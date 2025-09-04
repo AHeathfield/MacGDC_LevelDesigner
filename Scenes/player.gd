@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	# for when they get on wall initially
 	if is_on_wall() and direction and velocity.y > 0:
 		isWallSliding = true
+		jumps_done = 0
 		directionAwayFromWall = direction * -1
 	elif not isWallJumping:
 		if not is_on_wall():
