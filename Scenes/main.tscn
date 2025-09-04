@@ -1,6 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://7njst416oj38"]
+[gd_scene load_steps=7 format=3 uid="uid://7njst416oj38"]
 
 [ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="1_jjgbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8gbba"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jjvhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(400, 20)
@@ -10,6 +16,24 @@ size = Vector2(400, 20)
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+position = Vector2(1, 1)
+WALL_JUMP_X_SPEED = 2500
+
+[node name="WallJumpTimer" type="Timer" parent="Player"]
+wait_time = 0.05
+one_shot = true
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(-190, -107)
+scale = Vector2(1, 11.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("RectangleShape2D_bo1nx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+material = SubResource("CanvasItemMaterial_8gbba")
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_jjvhh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 19)
@@ -20,3 +44,35 @@ shape = SubResource("RectangleShape2D_jjgbg")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 scale = Vector2(400, 20)
 texture = SubResource("CanvasTexture_bo1nx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, 122)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_jjgbg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+scale = Vector2(400, 20)
+texture = SubResource("CanvasTexture_bo1nx")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(0, 244)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_jjgbg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+scale = Vector2(400, 20)
+texture = SubResource("CanvasTexture_bo1nx")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(0, 488)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_jjgbg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+scale = Vector2(400, 20)
+texture = SubResource("CanvasTexture_bo1nx")
+
+[connection signal="timeout" from="Player/WallJumpTimer" to="Player" method="_on_wall_jump_timer_timeout"]
