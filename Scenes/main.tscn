@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="1_jjgbg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
-size = Vector2(400, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
+size = Vector2(400, 16)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bo1nx"]
 
@@ -11,12 +11,12 @@ size = Vector2(400, 20)
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(0, 19)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_jjgbg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_bo1nx")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
 scale = Vector2(400, 20)
 texture = SubResource("CanvasTexture_bo1nx")
