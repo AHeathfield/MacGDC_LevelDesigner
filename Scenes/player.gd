@@ -51,15 +51,7 @@ func _physics_process(delta: float) -> void:
 	
 	if is_gliding: print("Player is gliding")
 	
-	# Variable jump height if the player holds jump button
-	if Input.is_action_just_released("Jump"):
-		is_gliding = false
-		if velocity.y < 0:
-			@warning_ignore("integer_division")
-			if jumps_done == 0:
-				velocity.y = JUMP_VELOCITY / 4
-			else:
-				velocity.y = AIR_JUMP_VELOCITY / 4
+	
 
 
 	# Handling Inputs
@@ -70,6 +62,16 @@ func _physics_process(delta: float) -> void:
 	
 	HandleWallSlide()
 	HandleJump()
+	
+	# Variable jump height if the player holds jump button
+	if Input.is_action_just_released("Jump"):
+		is_gliding = false
+		if velocity.y < 0:
+			@warning_ignore("integer_division")
+			if jumps_done == 0:
+				velocity.y = JUMP_VELOCITY / 4
+			else:
+				velocity.y = AIR_JUMP_VELOCITY / 4
 	
 	move_and_slide()
 
@@ -106,6 +108,8 @@ func HandleWallSlide() -> void:
 
 func HandleWallJumpBuffer() -> void:
 	velocity.x = directionAwayFromWall * SPEED
+
+
 
 func _on_wall_jump_timer_timeout() -> void:
 	isWallJumping = false
