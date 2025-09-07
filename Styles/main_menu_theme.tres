@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cifgpqtuvhhs1"]
+
+[ext_resource type="StyleBox" uid="uid://dl0mhh38o28ii" path="res://Styles/panel_container_primary.tres" id="1_rgh7m"]
+[ext_resource type="StyleBox" uid="uid://bjme1od41w0j5" path="res://Styles/button_primary.tres" id="1_sobw3"]
+[ext_resource type="StyleBox" uid="uid://bcswgcjdj5jyg" path="res://Styles/button_secondary.tres" id="1_v660e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sobw3"]
+content_margin_bottom = 20.0
+
+[resource]
+Button/styles/normal = ExtResource("1_sobw3")
+Label/font_sizes/font_size = 30
+Label/styles/normal = SubResource("StyleBoxEmpty_sobw3")
+NewGameButton/base_type = &"Button"
+NewGameButton/styles/normal = ExtResource("1_v660e")
+PanelContainer/styles/panel = ExtResource("1_rgh7m")
+VBoxContainer/constants/separation = 20

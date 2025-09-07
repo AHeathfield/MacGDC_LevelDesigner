@@ -1,37 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://7njst416oj38"]
+[gd_scene load_steps=3 format=3 uid="uid://7njst416oj38"]
 
-[ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://cvv747uc0l3p0" path="res://Scripts/GameManager.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://phkrqlffue7m" path="res://Scenes/MainMenu.tscn" id="2_bo1nx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
-size = Vector2(400, 16)
+[node name="GameManager" type="Node"]
+script = ExtResource("1_jjgbg")
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_bo1nx"]
+[node name="MainMenu" parent="." instance=ExtResource("2_bo1nx")]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
+[node name="World2D" type="Node2D" parent="."]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_8gbba"]
-
-[node name="Main" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
-
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(0, 19)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-shape = SubResource("RectangleShape2D_bo1nx")
-
-[node name="Sprite2D" type="Sprite2D" parent="Ground"]
-scale = Vector2(400, 20)
-texture = SubResource("CanvasTexture_bo1nx")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-192, -36)
-scale = Vector2(1, 11.84)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_jjgbg")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(20, 20)
-texture = SubResource("CanvasTexture_8gbba")
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
