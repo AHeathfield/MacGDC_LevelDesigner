@@ -3,15 +3,20 @@
 [ext_resource type="Script" uid="uid://cvv747uc0l3p0" path="res://Scripts/GameManager.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://phkrqlffue7m" path="res://Scenes/MainMenu.tscn" id="2_bo1nx"]
 
-[node name="GameManager" type="Node"]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("world_2d", "gui")]
 script = ExtResource("1_jjgbg")
-
-[node name="MainMenu" parent="." instance=ExtResource("2_bo1nx")]
+world_2d = NodePath("World2D")
+gui = NodePath("GUI")
 
 [node name="World2D" type="Node2D" parent="."]
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" parent="GUI" instance=ExtResource("2_bo1nx")]
+layout_mode = 1

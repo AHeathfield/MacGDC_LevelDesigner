@@ -19,6 +19,11 @@ var isWallSliding := false
 var isWallJumping := false
 
 
+# Happens whenever an input is pressed
+func _input(event):
+	if event.is_action_pressed("OpenMenu"):
+		Global.game_manager.toggle_gui_visibility()
+
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Left", "Right")
 	# Add the gravity.

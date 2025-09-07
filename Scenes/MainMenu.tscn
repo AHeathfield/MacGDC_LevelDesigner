@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://phkrqlffue7m"]
+[gd_scene load_steps=3 format=3 uid="uid://phkrqlffue7m"]
 
+[ext_resource type="Script" uid="uid://hiubs1amfp32" path="res://Scripts/MainMenu.gd" id="1_853f1"]
 [ext_resource type="Theme" uid="uid://cifgpqtuvhhs1" path="res://Styles/main_menu_theme.tres" id="1_tt5f1"]
 
 [node name="MainMenu" type="CenterContainer"]
@@ -8,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_853f1")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(400, 0)
@@ -24,7 +26,7 @@ theme = ExtResource("1_tt5f1")
 text = "Main Menu"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="NewGame" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_tt5f1")
 theme_type_variation = &"NewGameButton"
@@ -38,6 +40,8 @@ text = "Continue"
 layout_mode = 2
 text = "Settings"
 
-[node name="Button4" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
