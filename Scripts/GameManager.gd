@@ -12,6 +12,8 @@ enum SceneAction
 
 var current_2d_scene
 var current_gui_scene
+var isGamePaused := false
+
 
 func _ready() -> void:
 	# In Project Settings->Global is where Global is defined
@@ -27,7 +29,6 @@ func toggle_gui_visibility() -> void:
 
 
 func change_gui_scene(new_scene: String, scene_action: SceneAction) -> void:
-	
 	if current_gui_scene != null:
 		match scene_action:
 			SceneAction.DELETE:
@@ -42,6 +43,7 @@ func change_gui_scene(new_scene: String, scene_action: SceneAction) -> void:
 
 
 func change_2d_scene(new_scene: String, scene_action: SceneAction) -> void:
+	isGamePaused = false # In case game was paused
 	if current_2d_scene != null:
 		match scene_action:
 			SceneAction.DELETE:
