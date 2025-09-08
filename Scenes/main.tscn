@@ -18,5 +18,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MainMenu" parent="GUI" instance=ExtResource("2_bo1nx")]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="GUI"]
+
+[node name="MainMenu" parent="GUI/CanvasLayer" instance=ExtResource("2_bo1nx")]

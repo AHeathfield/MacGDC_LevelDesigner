@@ -16,7 +16,7 @@ var current_gui_scene
 func _ready() -> void:
 	# In Project Settings->Global is where Global is defined
 	Global.game_manager = self
-	current_gui_scene = $GUI/MainMenu
+	current_gui_scene = $GUI/CanvasLayer/MainMenu # CanvasLayer means always on screen even if there is a camera
 
 
 func toggle_gui_visibility() -> void:
