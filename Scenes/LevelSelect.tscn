@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b27cmmm25qbc5"]
+
+[ext_resource type="Script" uid="uid://c7fo633kbe684" path="res://Scripts/LevelSelect.gd" id="1_fo23m"]
+[ext_resource type="Theme" uid="uid://cifgpqtuvhhs1" path="res://Styles/main_menu_theme.tres" id="2_1cx81"]
+
+[node name="LevelSelect" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fo23m")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 2
+theme = ExtResource("2_1cx81")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_1cx81")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_1cx81")
+text = "LEVELS"
+horizontal_alignment = 1
