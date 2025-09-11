@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED := 300.0
+const SPRINT_SPEED := 500.0
 const JUMP_VELOCITY := -400.0
 const AIR_JUMP_VELOCITY := -300.0
 const GRAVITY := 980
@@ -97,7 +98,10 @@ func HandleJump() -> void:
 
 func HandleDirectionalMovement(direction) -> void:
 	if direction:
-		velocity.x = direction * SPEED
+		if Input.is_action_pressed("Sprint"):
+			velocity.x = direction * SPRINT_SPEED
+		else:
+			velocity.x = direction * SPEED
 	else:
 		velocity.x = 0
 
@@ -107,7 +111,6 @@ func HandleWallSlide() -> void:
 
 func HandleWallJumpBuffer() -> void:
 	velocity.x = directionAwayFromWall * SPEED
-
 
 
 func _on_wall_jump_timer_timeout() -> void:
