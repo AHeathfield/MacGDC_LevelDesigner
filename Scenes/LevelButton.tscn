@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcfb5bweasaet"]
+
+[ext_resource type="Script" uid="uid://cqosqct2qttvg" path="res://Scripts/LevelButton.gd" id="1_yoeyv"]
+
+[node name="LevelButton" type="Button"]
+text = "Test"
+script = ExtResource("1_yoeyv")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

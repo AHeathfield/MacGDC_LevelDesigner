@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b27cmmm25qbc5"]
 
-[ext_resource type="Script" path="res://Scripts/LevelSelect.gd" id="1_fo23m"]
+[ext_resource type="Script" uid="uid://c7fo633kbe684" path="res://Scripts/LevelSelect.gd" id="1_fo23m"]
 [ext_resource type="Theme" uid="uid://cifgpqtuvhhs1" path="res://Styles/main_menu_theme.tres" id="2_1cx81"]
 
 [node name="LevelSelect" type="CenterContainer"]
@@ -30,48 +30,7 @@ size_flags_vertical = 3
 theme = ExtResource("2_1cx81")
 
 [node name="Label" type="Label" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_1cx81")
-text = "LEVELS"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_1cx81")
-text = "LEVELS"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_1cx81")
-text = "LEVELS"
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_1cx81")
-text = "LEVELS"
-horizontal_alignment = 1
-
-[node name="Label5" type="Label" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_1cx81")
-text = "LEVELS"
-horizontal_alignment = 1
-
-[node name="Label6" type="Label" parent="PanelContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_1cx81")
-text = "LEVELS"
-horizontal_alignment = 1
-
-[node name="Label7" type="Label" parent="PanelContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_1cx81")

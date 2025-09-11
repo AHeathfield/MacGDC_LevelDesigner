@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cvv747uc0l3p0" path="res://Scripts/GameManager.gd" id="1_jjgbg"]
 [ext_resource type="Script" path="res://Scripts/World2d.gd" id="2_8gbba"]
-[ext_resource type="PackedScene" uid="uid://phkrqlffue7m" path="res://Scenes/MainMenu.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://b27cmmm25qbc5" path="res://Scenes/LevelSelect.tscn" id="3_jjvhh"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("world_2d", "gui")]
 script = ExtResource("1_jjgbg")
@@ -20,6 +20,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="GUI"]
-
-[node name="MainMenu" parent="GUI/CanvasLayer" instance=ExtResource("2_bo1nx")]
+[node name="LevelSelect" parent="GUI" instance=ExtResource("3_jjvhh")]
+layout_mode = 1

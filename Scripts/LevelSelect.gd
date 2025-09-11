@@ -9,6 +9,10 @@ var levelNames: Array[String] = [
 
 func _ready() -> void:
 	# Creates all the buttons to access the specific levels
+	var vBox = $PanelContainer/ScrollContainer/VBoxContainer
+	var levelButtonScene = preload("res://Scenes/LevelButton.tscn")
 	for level in levelNames:
-		# Add level creation
-		print(level)
+		# Creating level
+		var newButton = levelButtonScene.instantiate()
+		newButton.text = level
+		vBox.add_child(newButton)
