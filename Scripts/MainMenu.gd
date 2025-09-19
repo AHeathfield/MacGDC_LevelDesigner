@@ -4,9 +4,8 @@ var gm := Global.game_manager
 
 func _on_new_game_pressed() -> void:
 	# Deleting whatever 2D scene is loaded
-	print("Starting new game")
+	print("Restarting level")
 	gm.restart_current_2d_scene()
-	#gm.change_2d_scene("res://Scenes/Levels/TestLevel.tscn", gm.SceneAction.DELETE)
 	
 	# Hiding the GUI
 	gm.current_gui_scene.visible = false
@@ -17,3 +16,12 @@ func _on_quit_pressed():
 	gm.remove_2d_scene(gm.SceneAction.DELETE)
 	gm.change_gui_scene("res://Scenes/LevelSelect.tscn", gm.SceneAction.HIDE)
 	gm.current_gui_scene.visible = true
+
+
+func _on_continue_pressed():
+	print("Continuing Level")
+	gm.toggle_gui_visibility()
+	# It shouldn't = null but just a safe guard
+	if (gm.current_2d_scene != null):
+		Global.SetPauseSubtree(gm.current_2d_scene, false)
+		gm.isGamePaused = false

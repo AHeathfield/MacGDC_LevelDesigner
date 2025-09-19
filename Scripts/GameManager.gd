@@ -97,6 +97,5 @@ func change_2d_scene(scene_path: String, scene_action: SceneAction) -> void:
 
 func restart_current_2d_scene():
 	if (current_2d_scene != null):
-		# Going to need to make like a script for the level prob by using classes to actually restart the scene by calling restart method which just resets any values that change like moving blocks
+		change_2d_scene(current_2d_scene.scene_file_path, SceneAction.DELETE)
 		# Or easy solution is delete scene and just load it again but if its big it will have a long loading screen
-		pass

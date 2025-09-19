@@ -32,9 +32,9 @@ horizontal_alignment = 1
 layout_mode = 2
 theme = ExtResource("1_tt5f1")
 theme_type_variation = &"NewGameButton"
-text = "New Game"
+text = "Restart"
 
-[node name="Button2" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="Continue" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Continue"
 
@@ -47,4 +47,5 @@ layout_mode = 2
 text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

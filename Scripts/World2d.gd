@@ -2,10 +2,13 @@ extends Node2D
 
 # Happens whenever an input is pressed
 func _input(event):
-	# One future problem may be that this assumes that the first child is the level
 	if event.is_action_pressed("OpenMenu"):
-		Global.game_manager.toggle_gui_visibility()
-		if (self.get_child_count() > 0):
-			var level = self.get_child(0)
-			Global.SetPauseSubtree(level, !Global.game_manager.isGamePaused)
+		# Old way may come useful if like there's multiple levels idk tbh
+		#if (self.get_child_count() > 0):
+			#var level = self.get_child(0)
+			#Global.SetPauseSubtree(level, !Global.game_manager.isGamePaused)
+			# Global.game_manager.isGamePaused = !Global.game_manager.isGamePaused
+		if (Global.game_manager.current_2d_scene != null):
+			Global.game_manager.toggle_gui_visibility()
+			Global.SetPauseSubtree(Global.game_manager.current_2d_scene, !Global.game_manager.isGamePaused)
 			Global.game_manager.isGamePaused = !Global.game_manager.isGamePaused
