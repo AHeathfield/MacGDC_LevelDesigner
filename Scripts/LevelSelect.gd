@@ -4,7 +4,8 @@ extends CenterContainer
 # If there is A LOT OF LEVELS we will automate this :)
 var levelNames: Array[String] = [
 	"TestLevel",
-	"TestLevel 2"
+	"TestLevel 2",
+	"Level Template"
 ]
 
 
