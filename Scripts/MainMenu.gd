@@ -5,7 +5,8 @@ var gm := Global.game_manager
 func _on_new_game_pressed() -> void:
 	# Deleting whatever 2D scene is loaded
 	print("Starting new game")
-	gm.change_2d_scene("res://Scenes/Levels/TestLevel.tscn", gm.SceneAction.DELETE)
+	gm.restart_current_2d_scene()
+	#gm.change_2d_scene("res://Scenes/Levels/TestLevel.tscn", gm.SceneAction.DELETE)
 	
 	# Hiding the GUI
 	gm.current_gui_scene.visible = false
