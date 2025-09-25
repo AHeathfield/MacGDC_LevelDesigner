@@ -282,7 +282,9 @@ tile_map_data = PackedByteArray("AAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAA
 tile_set = SubResource("TileSet_yix5p")
 
 [node name="Moving Platform" parent="." instance=ExtResource("5_n7rxf")]
-position = Vector2(-94, -12)
+position = Vector2(-94, -72)
+point_a = Vector2(-94, 37)
+point_b = Vector2(-94, -72)
 
 [node name="Player" parent="." instance=ExtResource("2_cop26")]
 
