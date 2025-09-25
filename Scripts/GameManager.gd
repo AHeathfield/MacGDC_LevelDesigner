@@ -87,7 +87,7 @@ func add_2d_scene(scene_path: String):
 		removedNodes.erase(scene_path)
 	else:
 		current_2d_scene = load(scene_path).instantiate()
-		world_2d.add_child(current_2d_scene)
+		world_2d.call_deferred("add_child", current_2d_scene)
 
 
 func change_2d_scene(scene_path: String, scene_action: SceneAction) -> void:
