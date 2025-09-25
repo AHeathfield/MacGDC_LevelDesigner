@@ -10,10 +10,17 @@ var direction = 1
 
 func _process(delta: float) -> void:
 	if ray_cast_right.is_colliding():
-		direction = -1
-		animated_sprite_2d.flip_h = true
+		var body = ray_cast_right.get_collider()
+		if body != null:
+			if not body.is_in_group("Player"):
+				direction = -1
+				animated_sprite_2d.flip_h = true
+		
 	if ray_cast_left.is_colliding():
-		direction = 1
-		animated_sprite_2d.flip_h = false
+		var body = ray_cast_left.get_collider()
+		if body != null:
+			if not body.is_in_group("Player"):
+				direction = 1
+				animated_sprite_2d.flip_h = false
 	
 	position.x += direction * SPEED * delta
