@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_83fxd"]
 [ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="2_cop26"]
-[ext_resource type="PackedScene" path="res://Scenes/goal_post.tscn" id="3_cop26"]
+[ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="3_cop26"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]
 texture = ExtResource("1_83fxd")
