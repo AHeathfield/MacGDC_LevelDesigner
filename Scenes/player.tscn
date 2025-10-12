@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://k7r2gnouydm0" path="res://Scripts/player.gd" id="1_v0iea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f60y1"]
-size = Vector2(16, 16)
+size = Vector2(12, 12)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_v0iea"]
 
@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_f60y1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.67451, 0, 0.235294, 1)
-scale = Vector2(16, 16)
+scale = Vector2(12, 12)
 texture = SubResource("CanvasTexture_v0iea")
 
 [node name="WallJumpTimer" type="Timer" parent="."]
