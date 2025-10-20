@@ -1,6 +1,15 @@
 extends Node
 class_name LevelInterface
 
+# VARIABLES
+@export_group("Level Info")
+
+## The name of your level (displayed in level select).
+@export var level_name : String
+
+## You!
+@export var creator_name : String
+
 @onready var player = $Player
 @onready var tilemaplayer = $Mainground
 
