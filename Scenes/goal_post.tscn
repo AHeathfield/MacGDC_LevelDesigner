@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8yytesk3fv1l"]
 
-[ext_resource type="Script" uid="uid://b6edlocon3l5v" path="res://Scenes/goal_post.gd" id="1_8ff7v"]
+[ext_resource type="Script" uid="uid://b6edlocon3l5v" path="res://Scripts/goal_post.gd" id="1_8ff7v"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_50e56"]
 
@@ -11,6 +11,7 @@ size = Vector2(16, 32)
 script = ExtResource("1_8ff7v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 1)
 position = Vector2(0, -16)
 scale = Vector2(16, 32)
 texture = SubResource("CanvasTexture_50e56")
