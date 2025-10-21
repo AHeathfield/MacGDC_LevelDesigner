@@ -26,5 +26,11 @@ func _process(delta: float) -> void:
 	var data = tilemaplayer.get_cell_tile_data(tile_coords)
 	#print(data.get_custom_data("Hazard"))
 	if data and data.get_custom_data("Hazard"):
-		player.global_position = start_pos
+		#player.global_position = start_pos
+		restart()
 		print("player died")
+
+
+# Resetting the player position I think should be a must, but creators will have the option to add more
+func restart() -> void:
+	player.global_position = start_pos

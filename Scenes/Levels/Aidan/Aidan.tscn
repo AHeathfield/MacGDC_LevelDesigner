@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://dovo7iifeecw0"]
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_5ilr6"]
-[ext_resource type="Script" uid="uid://f12dr0237iw7" path="res://Scripts/level_template.gd" id="1_54oh3"]
+[ext_resource type="Script" uid="uid://b613fj1ofeeif" path="res://Scenes/Levels/Aidan/aidan.gd" id="1_wtngl"]
 [ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="2_6yl3g"]
 [ext_resource type="Texture2D" uid="uid://cbxqn4rejymoe" path="res://Assets/four-seasons-tileset.png" id="2_10inc"]
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="3_10inc"]
@@ -277,7 +277,7 @@ sources/1 = SubResource("TileSetAtlasSource_n7rxf")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ershp"]
 
 [node name="Level Template" type="Node2D"]
-script = ExtResource("1_54oh3")
+script = ExtResource("1_wtngl")
 level_name = "Aidan"
 creator_name = "Aidan"
 
