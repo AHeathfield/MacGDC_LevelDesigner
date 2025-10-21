@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=4 uid="uid://dmo44vue0vc72"]
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_83fxd"]
-[ext_resource type="Script" uid="uid://f12dr0237iw7" path="res://Scripts/level_template.gd" id="1_ne7gb"]
+[ext_resource type="Script" uid="uid://f12dr0237iw7" path="res://Scenes/Levels/Level Template/level_template.gd" id="1_ne7gb"]
 [ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="2_cop26"]
 [ext_resource type="Texture2D" uid="uid://cbxqn4rejymoe" path="res://Assets/four-seasons-tileset.png" id="2_kkr88"]
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="3_cop26"]
 [ext_resource type="PackedScene" uid="uid://b154xr1jsd1et" path="res://Scenes/moving_platform.tscn" id="5_n7rxf"]
-[ext_resource type="PackedScene" path="res://Scenes/time.tscn" id="7_1f3oo"]
+[ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="7_1f3oo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]
 texture = ExtResource("1_83fxd")

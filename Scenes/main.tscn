@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://ca7gj67ycxw4k" path="res://Scripts/World2d.gd" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://b27cmmm25qbc5" path="res://Scenes/LevelSelect.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dovo7iifeecw0" path="res://Scenes/Levels/Aidan/Aidan.tscn" id="4_kry3j"]
-[ext_resource type="PackedScene" uid="uid://dmo44vue0vc72" path="res://Scenes/Levels/Level Template.tscn" id="5_21xkr"]
-[ext_resource type="PackedScene" uid="uid://c82vk0iyoofrp" path="res://Scenes/Levels/Owen.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dmo44vue0vc72" path="res://Scenes/Levels/Level Template/Level Template.tscn" id="5_21xkr"]
+[ext_resource type="PackedScene" uid="uid://c82vk0iyoofrp" path="res://Scenes/Levels/Owen/Owen.tscn" id="6_21xkr"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("world_2d", "gui")]
 script = ExtResource("1_jjgbg")

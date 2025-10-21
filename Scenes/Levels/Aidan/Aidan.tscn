@@ -290,7 +290,16 @@ tile_map_data = PackedByteArray("AAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAA
 tile_set = SubResource("TileSet_yix5p")
 
 [node name="Moving Platform" parent="." instance=ExtResource("3_ershp")]
-position = Vector2(-94, -12)
+position = Vector2(-99, 83)
+point_a = Vector2(-99, -96)
+point_b = Vector2(-99, 83)
+speed = 1.0
+
+[node name="Moving Platform2" parent="." instance=ExtResource("3_ershp")]
+position = Vector2(344, -106)
+point_a = Vector2(124, -106)
+point_b = Vector2(344, -106)
+speed = 1.0
 
 [node name="Player" parent="." instance=ExtResource("2_6yl3g")]
 

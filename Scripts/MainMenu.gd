@@ -5,10 +5,10 @@ var gm := Global.game_manager
 func _on_new_game_pressed() -> void:
 	# Deleting whatever 2D scene is loaded
 	print("Restarting level")
-	gm.restart_current_2d_scene()
+	#gm.restart_current_2d_scene()
+	gm.restart_current_level()
 	
-	# Hiding the GUI
-	gm.current_gui_scene.visible = false
+	
 
 
 func _on_quit_pressed():

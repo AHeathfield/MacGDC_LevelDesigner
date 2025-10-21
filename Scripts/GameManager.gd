@@ -10,7 +10,8 @@ enum SceneAction
 @export var world_2d : Node2D
 @export var gui : Control
 
-var current_2d_scene
+# Making this LevelInterface so levels are forced to use LevelInterface
+var current_2d_scene : LevelInterface
 var current_gui_scene
 var removedNodes := {}
 var hiddenNodes := {}
@@ -86,7 +87,7 @@ func add_2d_scene(scene_path: String):
 		current_2d_scene = removedNodes[scene_path]
 		removedNodes.erase(scene_path)
 	else:
-		current_2d_scene = load(scene_path).instantiate()
+		current_2d_scene = load(scene_path).instantiate() as LevelInterface
 		world_2d.call_deferred("add_child", current_2d_scene)
 
 
@@ -94,8 +95,16 @@ func change_2d_scene(scene_path: String, scene_action: SceneAction) -> void:
 	remove_2d_scene(scene_action)
 	add_2d_scene(scene_path)
 
+# This is the normal level restart which just calls the
+# restart method from LevelInterface
+func restart_current_level() -> void:
+	current_2d_scene.restart()
+	# Hiding the GUI and unpausing
+	toggle_gui_visibility()
+	Global.SetPauseSubtree(current_2d_scene, false)
 
-func restart_current_2d_scene():
+# This is a hard restart it removes the node and adds it back
+func restart_current_2d_scene() -> void:
 	if (current_2d_scene != null):
 		change_2d_scene(current_2d_scene.scene_file_path, SceneAction.DELETE)
 		# Or easy solution is delete scene and just load it again but if its big it will have a long loading screen
