@@ -80,6 +80,7 @@ func _physics_process(delta: float) -> void:
 func HandleJump() -> void:
 	if Input.is_action_just_pressed("Jump"):
 		if jumps_done < max_jumps:
+			$JumpSFX.play()
 			if isWallSliding:
 				jumps_done = 0
 				velocity.x = directionAwayFromWall * WALL_JUMP_X_SPEED
