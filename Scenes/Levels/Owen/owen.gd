@@ -21,5 +21,5 @@ func _process(delta: float) -> void:
 # already!
 func restart() -> void:
 	super()
-	$Player/SFX.play()
+	$DeathSFX.play()
 	# Can add other resets here!
