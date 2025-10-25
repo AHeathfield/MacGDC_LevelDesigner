@@ -7,8 +7,6 @@ func _on_new_game_pressed() -> void:
 	print("Restarting level")
 	#gm.restart_current_2d_scene()
 	gm.restart_current_level()
-	
-	
 
 
 func _on_quit_pressed():
@@ -22,6 +20,7 @@ func _on_continue_pressed():
 	print("Continuing Level")
 	gm.toggle_gui_visibility()
 	# It shouldn't = null but just a safe guard
-	if (gm.current_2d_scene != null):
-		Global.SetPauseSubtree(gm.current_2d_scene, false)
-		gm.isGamePaused = false
+	gm.unpause_game()
+	#if (gm.current_2d_scene != null):
+		#Global.SetPauseSubtree(gm.current_2d_scene, false)
+		#gm.isGamePaused = false

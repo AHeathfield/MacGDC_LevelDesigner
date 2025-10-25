@@ -1,6 +1,6 @@
 extends LevelInterface
 
-@onready var slime := $Slime
+@onready var slime := $Enemies/Slime
 var slime_start_pos : Vector2
 
 # Called when the node enters the scene tree for the first time.
