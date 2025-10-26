@@ -21,7 +21,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var tile_coords = tilemaplayer.local_to_map(player.global_position)
 	var data = tilemaplayer.get_cell_tile_data(tile_coords)
 	#print(data.get_custom_data("Hazard"))

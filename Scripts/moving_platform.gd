@@ -1,20 +1,17 @@
-extends StaticBody2D
+extends Path2D
 
-@export var point_a: Vector2 = Vector2.ZERO
-@export var point_b: Vector2 = Vector2.ZERO
-@export var speed: float = 2.0
+@export var loop := true
+@export var speed := 2.0
+@export var speed_scale := 1.0
 
-# Called when the node enters the scene tree for the first time.
+@onready var path: PathFollow2D = $PathFollow2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 func _ready() -> void:
-	global_position = point_a
-	move_to_b()
+	if not loop:
+		animation_player.play("move")
+		animation_player.speed_scale = speed_scale
+		set_process(false)
 
-func move_to_b():
-	var tween = create_tween()
-	tween.tween_property(self, "global_position", point_b, speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.finished.connect(move_to_a)
-	
-func move_to_a():
-	var tween = create_tween()
-	tween.tween_property(self, "global_position", point_a, speed).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.finished.connect(move_to_b)
+func _process(_delta: float) -> void:
+	path.progress += speed
