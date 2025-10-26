@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://beix1yx1mofo1"]
+[gd_scene load_steps=10 format=3 uid="uid://beix1yx1mofo1"]
 
+[ext_resource type="Script" uid="uid://tsjyuyq887iu" path="res://Scenes/Enemies/goose.gd" id="1_myytn"]
 [ext_resource type="Texture2D" uid="uid://brkigqvu683px" path="res://Assets/dungeonSprites_ v1.5/slime_.png" id="2_myytn"]
 [ext_resource type="PackedScene" uid="uid://br8cai3tivu1e" path="res://Scenes/KillZone.tscn" id="3_mte6t"]
 
@@ -43,6 +44,7 @@ animations = [{
 size = Vector2(12, 12)
 
 [node name="goose" type="Node2D"]
+script = ExtResource("1_myytn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
@@ -52,6 +54,10 @@ autoplay = "default"
 [node name="KillZone" parent="." instance=ExtResource("3_mte6t")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-visible = false
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_y47qq")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+exclude_parent = false
+target_position = Vector2(50, 0)
