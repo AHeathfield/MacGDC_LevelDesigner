@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dovo7iifeecw0"]
+[gd_scene load_steps=17 format=4 uid="uid://dovo7iifeecw0"]
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_5ilr6"]
 [ext_resource type="Script" uid="uid://b613fj1ofeeif" path="res://Scenes/Levels/Aidan/aidan.gd" id="1_wtngl"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="3_10inc"]
 [ext_resource type="PackedScene" uid="uid://b154xr1jsd1et" path="res://Scenes/moving_platform.tscn" id="3_ershp"]
 [ext_resource type="PackedScene" uid="uid://br8cai3tivu1e" path="res://Scenes/KillZone.tscn" id="4_6yl3g"]
-[ext_resource type="PackedScene" uid="uid://c6x7gx5ru6ebk" path="res://Scenes/Slime.tscn" id="7_p2o1k"]
+[ext_resource type="PackedScene" uid="uid://c6x7gx5ru6ebk" path="res://Scenes/Enemies/Slime.tscn" id="7_p2o1k"]
+[ext_resource type="PackedScene" uid="uid://beix1yx1mofo1" path="res://Scenes/Enemies/goose.tscn" id="9_gaqt8"]
+[ext_resource type="Script" uid="uid://bw0w5tu83ahcb" path="res://Scripts/move_along_path.gd" id="9_kmdu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]
 texture = ExtResource("1_5ilr6")
@@ -276,7 +278,19 @@ sources/1 = SubResource("TileSetAtlasSource_n7rxf")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ershp"]
 
-[node name="Level Template" type="Node2D"]
+[sub_resource type="Curve2D" id="Curve2D_gaqt8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 21, -101, 0, 0, 0, 0, 106, -114, 0, 0, 0, 0, 99, -162, 0, 0, 0, 0, -6, -166)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_kmdu8"]
+_data = {
+"points": PackedVector2Array(-49.91032, 0, 49.91032, 0, 200, -60, 0, 0, 0, 0, 250, -110, 49.069134, 0, -49.069134, 0, 200, -160, 0, 0, 0, 0, 150, -110, -48.788742, -0.28039506, 48.788742, 0.28039506, 200, -60)
+}
+point_count = 5
+
+[node name="Aidan" type="Node2D"]
 script = ExtResource("1_wtngl")
 level_name = "Aidan"
 creator_name = "Aidan"
@@ -295,12 +309,6 @@ point_a = Vector2(-99, -96)
 point_b = Vector2(-99, 83)
 speed = 1.0
 
-[node name="Moving Platform2" parent="." instance=ExtResource("3_ershp")]
-position = Vector2(344, -106)
-point_a = Vector2(124, -106)
-point_b = Vector2(344, -106)
-speed = 1.0
-
 [node name="Player" parent="." instance=ExtResource("2_6yl3g")]
 
 [node name="Foreground" type="TileMapLayer" parent="."]
@@ -315,5 +323,30 @@ position = Vector2(0, 136)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_ershp")
 
-[node name="Slime" parent="." instance=ExtResource("7_p2o1k")]
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Slime" parent="Enemies" instance=ExtResource("7_p2o1k")]
 position = Vector2(72, 15)
+
+[node name="Path2D" type="Path2D" parent="Enemies"]
+curve = SubResource("Curve2D_gaqt8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/Path2D"]
+position = Vector2(21, -101)
+rotates = false
+script = ExtResource("9_kmdu8")
+speed = 4.0
+
+[node name="goose" parent="Enemies/Path2D/PathFollow2D" instance=ExtResource("9_gaqt8")]
+
+[node name="CirclePath" type="Path2D" parent="Enemies"]
+curve = SubResource("Curve2D_kmdu8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Enemies/CirclePath"]
+position = Vector2(200, -60)
+rotates = false
+script = ExtResource("9_kmdu8")
+speed = 4.0
+ping_pong = false
+
+[node name="goose" parent="Enemies/CirclePath/PathFollow2D" instance=ExtResource("9_gaqt8")]

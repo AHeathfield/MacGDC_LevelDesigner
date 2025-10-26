@@ -26,6 +26,15 @@ func _ready() -> void:
 
 	#current_gui_scene = $GUI/CanvasLayer/MainMenu # CanvasLayer means always on screen even if there is a camera
 
+func pause_game() -> void:
+	if (current_2d_scene != null):
+		Global.SetPauseSubtree(current_2d_scene, true)
+		isGamePaused = true
+		
+func unpause_game() -> void:
+	if (current_2d_scene != null):
+		Global.SetPauseSubtree(current_2d_scene, false)
+		isGamePaused = false
 
 func toggle_gui_visibility() -> void:
 	current_gui_scene.visible = !current_gui_scene.visible
@@ -100,7 +109,7 @@ func change_2d_scene(scene_path: String, scene_action: SceneAction) -> void:
 func restart_current_level() -> void:
 	current_2d_scene.restart()
 	# Hiding the GUI and unpausing
-	toggle_gui_visibility()
+	current_gui_scene.visible = false
 	Global.SetPauseSubtree(current_2d_scene, false)
 
 # This is a hard restart it removes the node and adds it back
