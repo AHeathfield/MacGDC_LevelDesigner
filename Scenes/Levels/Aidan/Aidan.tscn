@@ -319,6 +319,7 @@ tile_set = SubResource("TileSet_pc2g7")
 position = Vector2(334, 251)
 
 [node name="Player" parent="." instance=ExtResource("2_6yl3g")]
+position = Vector2(265, 195)
 
 [node name="KillZone" parent="." instance=ExtResource("4_6yl3g")]
 position = Vector2(0, 377)
