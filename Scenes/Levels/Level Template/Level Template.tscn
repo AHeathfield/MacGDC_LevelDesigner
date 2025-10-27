@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://6xtbif8cjgh4"]
+[gd_scene load_steps=14 format=4 uid="uid://6xtbif8cjgh4"]
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_83fxd"]
 [ext_resource type="Script" uid="uid://f12dr0237iw7" path="res://Scenes/Levels/Level Template/level_template.gd" id="1_ne7gb"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="3_cop26"]
 [ext_resource type="PackedScene" uid="uid://b154xr1jsd1et" path="res://Scenes/moving_platform.tscn" id="5_n7rxf"]
 [ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="7_1f3oo"]
-[ext_resource type="Script" uid="uid://7dji268mtvbj" path="res://Scripts/time_with_milli_sec.gd" id="7_vnkmn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]
 texture = ExtResource("1_83fxd")
@@ -316,7 +315,7 @@ tile_map_data = PackedByteArray("AAAGABIAAAAJAAAAAAAGABMAAQAAAAAAAAAHABIAAAAJAAA
 tile_set = SubResource("TileSet_yix5p")
 
 [node name="Player" parent="." instance=ExtResource("2_cop26")]
-position = Vector2(248, 179)
+position = Vector2(241, 183)
 
 [node name="Foreground" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_yix5p")
@@ -324,20 +323,17 @@ tile_set = SubResource("TileSet_yix5p")
 [node name="Goal Post" parent="." instance=ExtResource("3_cop26")]
 position = Vector2(334, 251)
 
-[node name="Time" parent="." node_paths=PackedStringArray("level") instance=ExtResource("7_1f3oo")]
-script = ExtResource("7_vnkmn")
-level = NodePath("..")
+[node name="Time" parent="." instance=ExtResource("7_1f3oo")]
 
 [node name="Moving Platform" parent="." instance=ExtResource("5_n7rxf")]
 position = Vector2(87, 218)
 curve = SubResource("Curve2D_1f3oo")
-loop = false
 
 [node name="Moving Platform2" parent="." instance=ExtResource("5_n7rxf")]
 position = Vector2(87, 81)
 curve = SubResource("Curve2D_gktnv")
-loop = false
 
 [node name="Moving Platform3" parent="." instance=ExtResource("5_n7rxf")]
 position = Vector2(-72, 301)
 curve = SubResource("Curve2D_tcx56")
+loop = true
