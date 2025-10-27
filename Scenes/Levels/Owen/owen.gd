@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 func restart() -> void:
 	super()
 	$DeathSFX.play()
+	$Time.current_time = 0
 	# Can add other resets here!
 
 

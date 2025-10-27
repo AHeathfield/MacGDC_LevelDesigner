@@ -328,8 +328,9 @@ tile_set = SubResource("TileSet_yix5p")
 [node name="Goal Post" parent="." instance=ExtResource("6_4u844")]
 position = Vector2(-119, 147)
 
-[node name="Time" parent="." instance=ExtResource("7_vm52v")]
+[node name="Time" parent="." node_paths=PackedStringArray("level") instance=ExtResource("7_vm52v")]
 script = ExtResource("8_8yk4s")
+level = NodePath("..")
 
 [node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_ueniv")

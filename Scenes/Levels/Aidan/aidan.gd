@@ -42,7 +42,7 @@ func restart() -> void:
 	super()
 	# Can add other resets here!
 	slime.position = slime_start_pos
-	
+	$Time.current_time = 0
 
 
 func _on_intro_finished() -> void:

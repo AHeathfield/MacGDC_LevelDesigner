@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dovo7iifeecw0"]
+[gd_scene load_steps=20 format=4 uid="uid://dovo7iifeecw0"]
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_5ilr6"]
 [ext_resource type="Script" uid="uid://b613fj1ofeeif" path="res://Scenes/Levels/Aidan/aidan.gd" id="1_wtngl"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://bw0w5tu83ahcb" path="res://Scripts/move_along_path.gd" id="9_kmdu8"]
 [ext_resource type="AudioStream" uid="uid://bn1kiv7xhx58m" path="res://Assets/Music/Default_BGM_intro.wav" id="10_pc2g7"]
 [ext_resource type="AudioStream" uid="uid://deojrm2838cfy" path="res://Assets/Music/Default_BGM_loop.wav" id="11_7tphg"]
+[ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="12_7tphg"]
+[ext_resource type="Script" uid="uid://7dji268mtvbj" path="res://Scripts/time_with_milli_sec.gd" id="13_m4lf8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gaqt8"]
 texture = ExtResource("1_5ilr6")
@@ -376,5 +378,9 @@ volume_db = -5.0
 [node name="Loop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_7tphg")
 volume_db = -5.0
+
+[node name="Time" parent="." node_paths=PackedStringArray("level") instance=ExtResource("12_7tphg")]
+script = ExtResource("13_m4lf8")
+level = NodePath("..")
 
 [connection signal="finished" from="Intro" to="." method="_on_intro_finished"]
