@@ -7,6 +7,7 @@ signal goal_reached
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		# Add effects here (ex confetti)
+		$AudioStreamPlayer2D.play()
 		win_menu_timer.start()
 		Global.game_manager.pause_game()
 
