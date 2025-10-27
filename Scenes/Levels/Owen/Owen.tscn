@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c82vk0iyoofrp"]
+[gd_scene load_steps=15 format=4 uid="uid://c82vk0iyoofrp"]
 
 [ext_resource type="Script" uid="uid://c2prk5ejl6kbd" path="res://Scenes/Levels/Owen/owen.gd" id="1_7los6"]
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="2_8yk4s"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="7_vm52v"]
 [ext_resource type="Script" uid="uid://7dji268mtvbj" path="res://Scripts/time_with_milli_sec.gd" id="8_8yk4s"]
 [ext_resource type="AudioStream" uid="uid://bufd71qn317hh" path="res://Assets/SFX/death.mp3" id="9_ueniv"]
+[ext_resource type="AudioStream" uid="uid://bn1kiv7xhx58m" path="res://Assets/Music/Default_BGM_intro.wav" id="10_7n80h"]
+[ext_resource type="AudioStream" uid="uid://deojrm2838cfy" path="res://Assets/Music/Default_BGM_loop.wav" id="11_0usa7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]
 texture = ExtResource("2_8yk4s")
@@ -316,8 +318,6 @@ tile_set = SubResource("TileSet_yix5p")
 
 [node name="Moving Platform" parent="." instance=ExtResource("4_doggd")]
 position = Vector2(133, 120)
-point_a = Vector2(133, 264)
-point_b = Vector2(133, 120)
 
 [node name="Player" parent="." instance=ExtResource("5_lfiyn")]
 position = Vector2(248, 179)
@@ -333,3 +333,11 @@ script = ExtResource("8_8yk4s")
 
 [node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_ueniv")
+
+[node name="Intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_7n80h")
+
+[node name="Loop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_0usa7")
+
+[connection signal="finished" from="Intro" to="." method="_on_intro_finished"]
