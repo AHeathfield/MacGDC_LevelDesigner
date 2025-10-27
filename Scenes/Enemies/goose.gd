@@ -10,6 +10,18 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	super(delta)
+	# Flips sprite to face direction it moves
+	if is_moving_right:
+		$AnimatedSprite2D.flip_h = false
+	else:
+		$AnimatedSprite2D.flip_h = true
+		
+	# If player in range switch to angry sprite
+	if player_in_range:
+		$AnimatedSprite2D.animation = "angry"
+	else:
+		$AnimatedSprite2D.animation = "default"
+	
 	# Rotates the raycast towards player
 	raycast.look_at(player.global_position)
 	# Raycasts happen on physic frames this forces it to happen on this frame

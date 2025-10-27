@@ -1,39 +1,44 @@
 [gd_scene load_steps=10 format=3 uid="uid://beix1yx1mofo1"]
 
 [ext_resource type="Script" uid="uid://tsjyuyq887iu" path="res://Scenes/Enemies/goose.gd" id="1_myytn"]
-[ext_resource type="Texture2D" uid="uid://brkigqvu683px" path="res://Assets/dungeonSprites_ v1.5/slime_.png" id="2_myytn"]
+[ext_resource type="Texture2D" uid="uid://cg2gvr412hkyh" path="res://Assets/goose.png" id="2_myytn"]
 [ext_resource type="PackedScene" uid="uid://br8cai3tivu1e" path="res://Scenes/KillZone.tscn" id="3_mte6t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p1xxi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mte6t"]
 atlas = ExtResource("2_myytn")
-region = Rect2(0, 24, 24, 24)
+region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7yyg5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8qn7"]
 atlas = ExtResource("2_myytn")
-region = Rect2(24, 24, 24, 24)
+region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xsyo3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y47qq"]
 atlas = ExtResource("2_myytn")
-region = Rect2(48, 24, 24, 24)
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oi5nh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1p34"]
 atlas = ExtResource("2_myytn")
-region = Rect2(72, 24, 24, 24)
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n8qn7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p1xxi")
+"texture": SubResource("AtlasTexture_mte6t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7yyg5")
+"texture": SubResource("AtlasTexture_n8qn7")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y47qq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xsyo3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oi5nh")
+"texture": SubResource("AtlasTexture_y1p34")
 }],
 "loop": true,
 "name": &"default",
@@ -41,13 +46,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y47qq"]
-size = Vector2(12, 12)
+size = Vector2(28, 8)
 
 [node name="goose" type="Node2D"]
 script = ExtResource("1_myytn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -6)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_n8qn7")
 autoplay = "default"
 

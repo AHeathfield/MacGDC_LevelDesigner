@@ -9,6 +9,7 @@ var direction : int = 1
 var is_moving : bool = true
 
 func _process(delta: float) -> void:
+	var pos_before = position
 	if not enemy.is_following:
 		if ping_pong:
 			if loop:
@@ -21,3 +22,9 @@ func _process(delta: float) -> void:
 					progress_ratio = 1
 		# Moving along path
 		progress_ratio += direction * delta * speed / 10
+	
+	# Setting the enemy's facing direction
+	if position.x - pos_before.x < 0:
+		enemy.is_moving_right = false
+	elif position.x - pos_before.x > 0:
+		enemy.is_moving_right = true

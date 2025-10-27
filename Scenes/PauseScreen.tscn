@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://m6rr4x4q3q42"]
 
 [ext_resource type="Script" uid="uid://hiubs1amfp32" path="res://Scripts/MainMenu.gd" id="1_cjlot"]
-[ext_resource type="Theme" uid="uid://dk00e0x0py63n" path="res://Styles/Themes/test_theme.tres" id="2_ro3cd"]
+[ext_resource type="Theme" uid="uid://dk00e0x0py63n" path="res://Styles/Themes/StoneTheme.tres" id="2_ro3cd"]
 
 [node name="WinScreen" type="CanvasLayer"]
 script = ExtResource("1_cjlot")

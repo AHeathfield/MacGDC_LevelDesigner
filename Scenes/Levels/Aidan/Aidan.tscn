@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dovo7iifeecw0"]
+[gd_scene load_steps=18 format=4 uid="uid://dovo7iifeecw0"]
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_5ilr6"]
 [ext_resource type="Script" uid="uid://b613fj1ofeeif" path="res://Scenes/Levels/Aidan/aidan.gd" id="1_wtngl"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c6x7gx5ru6ebk" path="res://Scenes/Enemies/Slime.tscn" id="7_p2o1k"]
 [ext_resource type="PackedScene" uid="uid://beix1yx1mofo1" path="res://Scenes/Enemies/goose.tscn" id="9_gaqt8"]
 [ext_resource type="Script" uid="uid://bw0w5tu83ahcb" path="res://Scripts/move_along_path.gd" id="9_kmdu8"]
+[ext_resource type="AudioStream" uid="uid://bn1kiv7xhx58m" path="res://Assets/Music/Default_BGM_intro.wav" id="10_pc2g7"]
+[ext_resource type="AudioStream" uid="uid://deojrm2838cfy" path="res://Assets/Music/Default_BGM_loop.wav" id="11_7tphg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gaqt8"]
 texture = ExtResource("1_5ilr6")
@@ -366,3 +368,13 @@ raycast_length = 100.0
 follow_player = true
 player = NodePath("../../../../Player")
 follow_speed = 100.0
+
+[node name="Intro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_pc2g7")
+volume_db = -5.0
+
+[node name="Loop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_7tphg")
+volume_db = -5.0
+
+[connection signal="finished" from="Intro" to="." method="_on_intro_finished"]

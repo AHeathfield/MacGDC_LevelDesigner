@@ -13,3 +13,5 @@ func _input(event):
 			#Maybe replace below with unpause and pause functions
 			Global.SetPauseSubtree(Global.game_manager.current_2d_scene, !Global.game_manager.isGamePaused)
 			Global.game_manager.isGamePaused = !Global.game_manager.isGamePaused
+			
+			
