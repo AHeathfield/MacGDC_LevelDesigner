@@ -20,5 +20,4 @@ func _process(delta: float) -> void:
 # already!
 func restart() -> void:
 	super()
-	$Time.current_time = 0
 	# Can add other resets here!

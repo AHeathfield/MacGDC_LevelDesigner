@@ -12,6 +12,7 @@ class_name LevelInterface
 
 @onready var player = $Player
 @onready var tilemaplayer = $Mainground
+@onready var timer = $Time
 
 var start_pos: Vector2
 var time_display : String
@@ -26,11 +27,17 @@ func _process(delta: float) -> void:
 	var data = tilemaplayer.get_cell_tile_data(tile_coords)
 	#print(data.get_custom_data("Hazard"))
 	if data and data.get_custom_data("Hazard"):
-		#player.global_position = start_pos
 		restart()
 		print("player died")
+	
+	#Updating the timer
+	timer.current_time += delta
+	timer.label.text = timer.convert_time_to_string(timer.current_time)
+	time_display = timer.label.text
 
 
 # Resetting the player position I think should be a must, but creators will have the option to add more
 func restart() -> void:
 	player.global_position = start_pos
+	player.velocity = Vector2.ZERO
+	timer.current_time = 0.0
