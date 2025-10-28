@@ -1,25 +1,87 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8yytesk3fv1l"]
+[gd_scene load_steps=14 format=3 uid="uid://b8yytesk3fv1l"]
 
 [ext_resource type="Script" uid="uid://b6edlocon3l5v" path="res://Scripts/goal_post.gd" id="1_8ff7v"]
 [ext_resource type="AudioStream" uid="uid://c2w8duufliaum" path="res://Assets/SFX/win.mp3" id="2_fkxfh"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_50e56"]
+[ext_resource type="Texture2D" uid="uid://2k5j7y3p8g7c" path="res://Assets/goal_post_spritesheet.png" id="2_hfte2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50e56"]
 size = Vector2(16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgsuu"]
+atlas = ExtResource("2_hfte2")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxlds"]
+atlas = ExtResource("2_hfte2")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfb80"]
+atlas = ExtResource("2_hfte2")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5qj2"]
+atlas = ExtResource("2_hfte2")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhtm2"]
+atlas = ExtResource("2_hfte2")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pclvj"]
+atlas = ExtResource("2_hfte2")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2jyv"]
+atlas = ExtResource("2_hfte2")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ptu2"]
+atlas = ExtResource("2_hfte2")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6smqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgsuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxlds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfb80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5qj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhtm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pclvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2jyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ptu2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Goal Post" type="Area2D"]
 script = ExtResource("1_8ff7v")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 1, 1)
-position = Vector2(0, -16)
-scale = Vector2(16, 32)
-texture = SubResource("CanvasTexture_50e56")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_50e56")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+sprite_frames = SubResource("SpriteFrames_6smqa")
+autoplay = "default"
+frame_progress = 0.10623248
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

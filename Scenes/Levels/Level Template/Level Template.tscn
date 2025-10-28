@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://6xtbif8cjgh4"]
+[gd_scene load_steps=15 format=4 uid="uid://6xtbif8cjgh4"]
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_83fxd"]
 [ext_resource type="Script" uid="uid://f12dr0237iw7" path="res://Scenes/Levels/Level Template/level_template.gd" id="1_ne7gb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="3_cop26"]
 [ext_resource type="PackedScene" uid="uid://b154xr1jsd1et" path="res://Scenes/moving_platform.tscn" id="5_n7rxf"]
 [ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="7_1f3oo"]
+[ext_resource type="PackedScene" uid="uid://c6x7gx5ru6ebk" path="res://Scenes/Enemies/Slime.tscn" id="8_vnkmn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]
 texture = ExtResource("1_83fxd")
@@ -321,7 +322,7 @@ position = Vector2(241, 183)
 tile_set = SubResource("TileSet_yix5p")
 
 [node name="Goal Post" parent="." instance=ExtResource("3_cop26")]
-position = Vector2(334, 251)
+position = Vector2(340, 257)
 
 [node name="Time" parent="." instance=ExtResource("7_1f3oo")]
 
@@ -337,3 +338,6 @@ curve = SubResource("Curve2D_gktnv")
 position = Vector2(-72, 301)
 curve = SubResource("Curve2D_tcx56")
 loop = true
+
+[node name="Slime" parent="." instance=ExtResource("8_vnkmn")]
+position = Vector2(366, 127)
