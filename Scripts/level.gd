@@ -15,6 +15,7 @@ class_name LevelInterface
 @onready var timer = $Time
 
 var start_pos: Vector2
+var current_time
 var time_display : String
 
 # Called when the node enters the scene tree for the first time.

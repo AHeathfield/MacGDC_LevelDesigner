@@ -1,16 +1,16 @@
 extends PathFollow2D
 
 # By default PathFollow2D loops back to start point
-@export var speed : float = 1.0
-@export var ping_pong : bool = true
-@export var enemy : Enemy
+@export var goose : Node2D
 
+var speed : float
+var ping_pong : bool
 var direction : int = 1
 var is_moving : bool = true
 
 func _process(delta: float) -> void:
 	var pos_before = position
-	if not enemy.is_following:
+	if not goose.is_following:
 		if ping_pong:
 			if loop:
 				var next_progress_ratio = progress_ratio + direction * delta * speed / 10
@@ -23,8 +23,8 @@ func _process(delta: float) -> void:
 		# Moving along path
 		progress_ratio += direction * delta * speed / 10
 	
-	# Setting the enemy's facing direction
+	# Setting the goose's facing direction
 	if position.x - pos_before.x < 0:
-		enemy.is_moving_right = false
+		goose.is_moving_right = false
 	elif position.x - pos_before.x > 0:
-		enemy.is_moving_right = true
+		goose.is_moving_right = true
