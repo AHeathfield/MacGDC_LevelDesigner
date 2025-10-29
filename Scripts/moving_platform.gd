@@ -7,7 +7,7 @@ extends Path2D
 @export var speed_loop_on := 2.0 ##The value of the platform's speed when looping is enabled
 @export var speed_loop_off := 1.0 ##The value of the platform's speed when looping is disabled
 
-##If true, the platform will only start moving once it collides with something.
+##If true, the platform will only start moving once if the player collides with it
 @export var trigger := false
 
 @export var collision_shape : Vector2 = Vector2(60, 16)
