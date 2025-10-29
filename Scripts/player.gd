@@ -19,13 +19,19 @@ var directionAwayFromWall = 0
 var isWallSliding := false
 var isWallJumping := false
 
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+@onready var wall_sprite_left : Sprite2D = $LeftWall
+@onready var wall_sprite_right : Sprite2D = $RightWall
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Left", "Right")
 	# Add the gravity.
 	if not is_on_floor(): 
-		if is_gliding: velocity.y += GLIDE_GRAVITY * delta
-		else: velocity += get_gravity() * delta
+		if is_gliding:
+			velocity.y += GLIDE_GRAVITY * delta
+			sprite.play("glide")
+		else:
+			velocity += get_gravity() * delta
 		if was_on_floor:
 			jumps_done = 1
 	else: 
@@ -91,27 +97,52 @@ func HandleJump() -> void:
 
 			if jumps_done == 0:
 				velocity.y = JUMP_VELOCITY
+				sprite.play("jump")
 			else:
 				velocity.y = AIR_JUMP_VELOCITY
+				sprite.play("air jump")
+				sprite.frame = 0
 			jumps_done += 1
 		print("Jumps left: ", max_jumps - jumps_done)
 
 
 func HandleDirectionalMovement(direction) -> void:
 	if direction:
+		# flipping sprite
+		if direction < 0:
+			sprite.flip_h = true
+		elif direction > 0:
+			sprite.flip_h = false
+		
 		if Input.is_action_pressed("Sprint"):
 			velocity.x = direction * SPRINT_SPEED
+			if is_on_floor():
+				sprite.play("sprint")
 		else:
 			velocity.x = direction * SPEED
+			if is_on_floor():
+				sprite.play("walk")
 	else:
 		velocity.x = 0
+		if is_on_floor():
+			sprite.play("idle")
 
 func HandleWallSlide() -> void:
 	if isWallSliding:
 		velocity.y = WALL_FALL_SPEED
+		sprite.visible = false
+		if directionAwayFromWall < 0:
+			wall_sprite_right.visible = true
+		elif directionAwayFromWall > 0:
+			wall_sprite_left.visible = true
+	else:
+		sprite.visible = true
+		wall_sprite_left.visible = false
+		wall_sprite_right.visible = false
 
 func HandleWallJumpBuffer() -> void:
 	velocity.x = directionAwayFromWall * SPEED
+
 
 
 func _on_wall_jump_timer_timeout() -> void:
