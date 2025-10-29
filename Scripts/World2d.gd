@@ -14,4 +14,5 @@ func _input(event):
 			Global.SetPauseSubtree(Global.game_manager.current_2d_scene, !Global.game_manager.isGamePaused)
 			Global.game_manager.isGamePaused = !Global.game_manager.isGamePaused
 			
-			
+func _process(_delta: float) -> void:
+	print(Global.game_manager.isGamePaused)		

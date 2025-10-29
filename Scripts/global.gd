@@ -18,3 +18,11 @@ func SetPauseSubtree(root: Node, pause: bool) -> void:
 	
 	for setter in process_setters:
 		root.propagate_call(setter, [!pause])
+		
+	for child in root.get_children():
+		if child is AnimationPlayer:
+			if pause:
+				child.pause()
+			else:
+				child.play()  # or resume, depending on your setup
+		SetPauseSubtree(child, pause)

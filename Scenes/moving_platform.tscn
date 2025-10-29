@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b154xr1jsd1et"]
+[gd_scene load_steps=8 format=3 uid="uid://b154xr1jsd1et"]
 
 [ext_resource type="Script" uid="uid://ciaer63dxpawa" path="res://Scripts/moving_platform.gd" id="1_vvyo4"]
 [ext_resource type="Texture2D" uid="uid://1kldafcvo8jr" path="res://Assets/cloud.png" id="2_anqd2"]
@@ -44,6 +44,21 @@ _data = {
 &"move": SubResource("Animation_anqd2")
 }
 
+[sub_resource type="GDScript" id="GDScript_anqd2"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	if Global.game_manager.isGamePaused:
+		print(\"HI\")
+"
+
 [node name="Moving Platform" type="Path2D"]
 script = ExtResource("1_vvyo4")
 
@@ -68,10 +83,15 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_anqd2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 1
 callback_mode_process = 0
 libraries = {
 &"": SubResource("AnimationLibrary_0773j")
 }
+
+[node name="Anim Handler" type="Node" parent="."]
+process_mode = 3
+script = SubResource("GDScript_anqd2")
 
 [connection signal="body_entered" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_body_shape_entered"]
