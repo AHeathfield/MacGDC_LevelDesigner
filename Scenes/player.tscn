@@ -183,7 +183,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f60y1"]
-size = Vector2(10, 25)
+size = Vector2(10, 23)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_v0iea")
@@ -209,7 +209,7 @@ region_enabled = true
 region_rect = Rect2(97.028885, 67.95973, 30.971115, 26.35714)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_f60y1")
 
 [node name="WallJumpTimer" type="Timer" parent="."]

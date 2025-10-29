@@ -1,10 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://b154xr1jsd1et"]
 
 [ext_resource type="Script" uid="uid://ciaer63dxpawa" path="res://Scripts/moving_platform.gd" id="1_vvyo4"]
+[ext_resource type="Texture2D" uid="uid://1kldafcvo8jr" path="res://Assets/cloud.png" id="2_anqd2"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_myvba"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvyo4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anqd2"]
 size = Vector2(60, 16)
 
 [sub_resource type="Animation" id="Animation_tdwu5"]
@@ -57,13 +56,11 @@ remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-self_modulate = Color(0, 1, 0, 1)
-scale = Vector2(60, 16)
-texture = SubResource("CanvasTexture_myvba")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-shape = SubResource("RectangleShape2D_vvyo4")
+shape = SubResource("RectangleShape2D_anqd2")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("2_anqd2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 callback_mode_process = 0
