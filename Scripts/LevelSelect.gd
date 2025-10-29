@@ -1,19 +1,10 @@
-extends CenterContainer
+extends Control
 
 @export var levels : Array[PackedScene]
-# This will be an array of all the level names, we have to manually add them to this array but that's ok, it's not like we have 100+ levels...
-# If there is A LOT OF LEVELS we will automate this :)
-#var levelNames: Array[String] = [
-	#"TestLevel",
-	#"TestLevel 2",
-	#"Level Template",
-	#"Aidan"
-#]
-
 
 func _ready() -> void:
 	# Creates all the buttons to access the specific levels
-	var vBox = $PanelContainer/ScrollContainer/VBoxContainer
+	var vBox = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer
 	var levelButtonScene = preload("res://Scenes/LevelButton.tscn")
 	#for level in levelNames:
 	for level in levels:
@@ -26,3 +17,8 @@ func _ready() -> void:
 		newButton.text = level_inst.level_name
 		
 		vBox.add_child(newButton)
+		newButton.more_info.text = level_inst.level_name + "\nCreated By: " + level_inst.creator_name
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

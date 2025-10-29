@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dk00e0x0py63n"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dk00e0x0py63n"]
 
 [ext_resource type="FontFile" uid="uid://c8ipp4apg7tbw" path="res://Assets/fonts/pixelmix/pixelmix.ttf" id="1_25cc5"]
 [ext_resource type="Texture2D" uid="uid://jaoqssstqn5k" path="res://Assets/UI/stonebutton_hover.png" id="2_yhkea"]
@@ -29,6 +29,8 @@ expand_margin_top = 8.0
 expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_25cc5"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16es0"]
 texture = ExtResource("4_71n2n")
 texture_margin_left = 180.0
@@ -46,6 +48,11 @@ Button/styles/pressed = SubResource("StyleBoxTexture_hpxd7")
 HeaderLarge/font_sizes/font_size = 56
 Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_25cc5")
+LevelButton/base_type = &"Button"
+LevelButton/styles/focus = SubResource("StyleBoxEmpty_25cc5")
+LevelButton/styles/hover = SubResource("StyleBoxTexture_hpxd7")
+LevelButton/styles/normal = SubResource("StyleBoxTexture_vqgil")
+LevelButton/styles/pressed = SubResource("StyleBoxTexture_hpxd7")
 MarginContainer/constants/margin_bottom = 40
 MarginContainer/constants/margin_left = 60
 MarginContainer/constants/margin_right = 60
