@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 			if not body.is_in_group("Player"):
 				direction = -1
 				animated_sprite_2d.flip_h = true
+				if ray_cast_down.position.x > 0:
+					ray_cast_down.position.x *= -1
 		
 	if ray_cast_left.is_colliding():
 		var body = ray_cast_left.get_collider()
@@ -23,6 +25,8 @@ func _process(delta: float) -> void:
 			if not body.is_in_group("Player"):
 				direction = 1
 				animated_sprite_2d.flip_h = false
+				if ray_cast_down.position.x < 0:
+					ray_cast_down.position.x = abs(ray_cast_down.position.x)
 			
 	if not ray_cast_down.is_colliding():
 		direction *= -1

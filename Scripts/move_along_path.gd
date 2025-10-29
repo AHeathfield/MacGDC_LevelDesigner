@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 					direction = -1
 					progress_ratio = 1
 		# Moving along path
-		progress_ratio += direction * delta * speed / 10
+		progress += direction * delta * speed * 50
 	
 	# Setting the goose's facing direction
 	if position.x - pos_before.x < 0:

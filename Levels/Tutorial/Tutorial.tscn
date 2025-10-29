@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://cfbclpmfqg73s"]
 
 [ext_resource type="Script" uid="uid://cfnvhdbk7tw3k" path="res://Levels/Tutorial/tutorial.gd" id="1_8758j"]
-[ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="2_p2j8t"]
+[ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/industrial_and_hazards.png" id="2_p2j8t"]
 [ext_resource type="Texture2D" uid="uid://cbxqn4rejymoe" path="res://Assets/four-seasons-tileset.png" id="3_oy3ut"]
 [ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="4_7fxmv"]
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="5_jtpsp"]
