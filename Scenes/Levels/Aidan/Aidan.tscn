@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="3_10inc"]
 [ext_resource type="PackedScene" uid="uid://br8cai3tivu1e" path="res://Scenes/KillZone.tscn" id="4_6yl3g"]
 [ext_resource type="PackedScene" uid="uid://c6x7gx5ru6ebk" path="res://Scenes/Enemies/Slime.tscn" id="7_p2o1k"]
-[ext_resource type="PackedScene" uid="uid://cne11u2j2s2jg" path="res://Scenes/Enemies/Goose.tscn" id="8_7tphg"]
+[ext_resource type="PackedScene" uid="uid://cne11u2j2s2jg" path="res://Scenes/Enemies/goose.tscn" id="8_7tphg"]
 [ext_resource type="AudioStream" uid="uid://bn1kiv7xhx58m" path="res://Assets/Music/Default_BGM_intro.wav" id="10_pc2g7"]
 [ext_resource type="AudioStream" uid="uid://deojrm2838cfy" path="res://Assets/Music/Default_BGM_loop.wav" id="11_7tphg"]
 [ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="12_7tphg"]
@@ -342,7 +342,7 @@ shape = SubResource("WorldBoundaryShape2D_ershp")
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Slime" parent="Enemies" instance=ExtResource("7_p2o1k")]
-position = Vector2(487, 203)
+position = Vector2(487, 209)
 
 [node name="Goose" parent="Enemies" node_paths=PackedStringArray("follow_player") instance=ExtResource("8_7tphg")]
 curve = SubResource("Curve2D_7tphg")
