@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b27cmmm25qbc5"]
 
-[ext_resource type="Script" uid="uid://c7fo633kbe684" path="res://Internal Files/Scripts/LevelSelect.gd" id="1_fo23m"]
-[ext_resource type="Texture2D" uid="uid://l1oahlkv6vi5" path="res://Internal Files/Assets/sky.png" id="2_1qomi"]
-[ext_resource type="Theme" uid="uid://dk00e0x0py63n" path="res://Internal Files/Styles/Themes/StoneTheme.tres" id="2_fo23m"]
-[ext_resource type="FontFile" uid="uid://cgaryjlxq41ra" path="res://Internal Files/Assets/fonts/pixelmix/pixelmix_bold.ttf" id="3_1cx81"]
+[ext_resource type="Script" uid="uid://c7fo633kbe684" path="res://Scripts/LevelSelect.gd" id="1_fo23m"]
+[ext_resource type="Texture2D" uid="uid://l1oahlkv6vi5" path="res://Assets/sky.png" id="2_1qomi"]
+[ext_resource type="Theme" uid="uid://dk00e0x0py63n" path="res://Styles/Themes/StoneTheme.tres" id="2_fo23m"]
+[ext_resource type="FontFile" uid="uid://cgaryjlxq41ra" path="res://Assets/fonts/pixelmix/pixelmix_bold.ttf" id="3_1cx81"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3

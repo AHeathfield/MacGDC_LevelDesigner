@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b154xr1jsd1et"]
 
-[ext_resource type="Script" uid="uid://ciaer63dxpawa" path="res://Scripts/moving_platform.gd" id="1_vvyo4"]
-[ext_resource type="Texture2D" uid="uid://1kldafcvo8jr" path="res://Assets/cloud.png" id="2_anqd2"]
+[ext_resource type="Script" uid="uid://ciaer63dxpawa" path="res://Scripts/moving_platform.gd" id="1_jsqxo"]
+[ext_resource type="Texture2D" uid="uid://1kldafcvo8jr" path="res://Assets/cloud.png" id="2_ir0ie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anqd2"]
 size = Vector2(60, 16)
@@ -60,7 +60,7 @@ func _process(_delta: float) -> void:
 "
 
 [node name="Moving Platform" type="Path2D"]
-script = ExtResource("1_vvyo4")
+script = ExtResource("1_jsqxo")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 rotates = false
@@ -80,7 +80,7 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_anqd2")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
-texture = ExtResource("2_anqd2")
+texture = ExtResource("2_ir0ie")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 1

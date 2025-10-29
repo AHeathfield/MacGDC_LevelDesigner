@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/industrial_and_hazards.png" id="2_hbq6r"]
 [ext_resource type="Texture2D" uid="uid://cbxqn4rejymoe" path="res://Assets/four-seasons-tileset.png" id="3_7kbhc"]
-[ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="4_yj0tv"]
-[ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="5_ka7v4"]
+[ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Addable Components/player.tscn" id="4_yj0tv"]
+[ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Addable Components/goal_post.tscn" id="5_ka7v4"]
 [ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="6_1448s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]

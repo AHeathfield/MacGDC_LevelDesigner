@@ -1,87 +1,87 @@
 [gd_scene load_steps=26 format=3 uid="uid://dj44kaa67lmof"]
 
-[ext_resource type="Script" uid="uid://k7r2gnouydm0" path="res://Scripts/player.gd" id="1_v0iea"]
-[ext_resource type="Texture2D" uid="uid://y5jaq10i8ea5" path="res://Assets/mac_the_marauder_spritesheet.png" id="2_6t5aa"]
-[ext_resource type="AudioStream" uid="uid://ch7dn7mimgno0" path="res://Assets/SFX/jump.mp3" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://k7r2gnouydm0" path="res://Scripts/player.gd" id="1_rcrq5"]
+[ext_resource type="Texture2D" uid="uid://y5jaq10i8ea5" path="res://Assets/mac_the_marauder_spritesheet.png" id="2_fgg5w"]
+[ext_resource type="AudioStream" uid="uid://ch7dn7mimgno0" path="res://Assets/SFX/jump.mp3" id="3_r0cjy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olqyp"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpjfl"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi64h"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ijsl"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_fgg5w")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p1odr"]
@@ -186,7 +186,7 @@ animations = [{
 size = Vector2(10, 23)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-script = ExtResource("1_v0iea")
+script = ExtResource("1_rcrq5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1odr")
@@ -196,7 +196,7 @@ autoplay = "idle"
 [node name="LeftWall" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(10, 0)
-texture = ExtResource("2_6t5aa")
+texture = ExtResource("2_fgg5w")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(97.028885, 67.95973, 30.971115, 26.35714)
@@ -204,7 +204,7 @@ region_rect = Rect2(97.028885, 67.95973, 30.971115, 26.35714)
 [node name="RightWall" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-10, 0)
-texture = ExtResource("2_6t5aa")
+texture = ExtResource("2_fgg5w")
 region_enabled = true
 region_rect = Rect2(97.028885, 67.95973, 30.971115, 26.35714)
 
@@ -216,7 +216,7 @@ shape = SubResource("RectangleShape2D_f60y1")
 wait_time = 0.05
 
 [node name="JumpSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_cvnsp")
+stream = ExtResource("3_r0cjy")
 volume_db = -7.15
 
 [connection signal="timeout" from="WallJumpTimer" to="." method="_on_wall_jump_timer_timeout"]
