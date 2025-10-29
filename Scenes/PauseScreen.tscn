@@ -52,7 +52,7 @@ text = "Continue"
 
 [node name="Quit" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit
+text = "Exit
 "
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]

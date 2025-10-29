@@ -1,6 +1,7 @@
 extends Button
 
 var level : LevelInterface
+@onready var more_info : RichTextLabel = $PanelContainer/MarginContainer/RichTextLabel
 
 func _on_pressed():
 	#var levelPath = "res://Scenes/Levels/" + self.text + ".tscn"
@@ -14,3 +15,11 @@ func _on_pressed():
 	
 	# Hiding the GUI
 	#gm.current_gui_scene.visible = false
+
+
+func _on_button_down() -> void:
+	$PanelContainer.visible = true
+
+
+func _on_button_up() -> void:
+	$PanelContainer.visible = false
