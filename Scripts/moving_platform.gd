@@ -33,7 +33,6 @@ func _ready() -> void:
 	$AnimatableBody2D/CollisionShape2D.shape.size = collision_shape
 	sprite.scale.x = collision_shape.x/60.0
 	sprite.scale.y = collision_shape.y/16.0
-	# Ask muiz if this works?
 	$AnimatableBody2D/Area2D/TempCollision.shape = $AnimatableBody2D/CollisionShape2D.shape
 
 
@@ -42,8 +41,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if can_move:
 		path.progress += speed_loop_on
-		print(shape.size)
-
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -54,4 +52,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			set_process(false)
 		else:
 			can_move = true
-		$AnimatableBody2D/Area2D/TempCollision.disabled = true
+		$AnimatableBody2D/Area2D/TempCollision.set_deferred("disabled", true)
