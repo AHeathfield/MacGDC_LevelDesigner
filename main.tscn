@@ -26,4 +26,4 @@ grow_vertical = 2
 
 [node name="LevelSelect" parent="GUI" instance=ExtResource("3_kek77")]
 layout_mode = 1
-levels = Array[PackedScene]([ExtResource("4_4c57u"), ExtResource("5_efxa6"), ExtResource("6_dg77c"), ExtResource("7_ycdy4")])
+levels = Array[PackedScene]([ExtResource("4_4c57u"), ExtResource("5_efxa6"), ExtResource("7_ycdy4"), ExtResource("6_dg77c")])
