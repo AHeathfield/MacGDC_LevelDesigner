@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://7njst416oj38"]
+
+[ext_resource type="Script" uid="uid://cvv747uc0l3p0" path="res://Scripts/GameManager.gd" id="1_272bh"]
+[ext_resource type="Script" uid="uid://ca7gj67ycxw4k" path="res://Scripts/World2d.gd" id="2_5vw27"]
+[ext_resource type="PackedScene" uid="uid://b27cmmm25qbc5" path="res://Scenes/LevelSelect.tscn" id="3_kek77"]
+[ext_resource type="PackedScene" uid="uid://cfbclpmfqg73s" path="res://Levels/Tutorial/Tutorial.tscn" id="4_4c57u"]
+[ext_resource type="PackedScene" uid="uid://6xtbif8cjgh4" path="res://Levels/Level Template/Level Template.tscn" id="5_efxa6"]
+[ext_resource type="PackedScene" uid="uid://c82vk0iyoofrp" path="res://Levels/Owen/Owen.tscn" id="6_dg77c"]
+[ext_resource type="PackedScene" uid="uid://dqy44owbe26bk" path="res://Levels/Awesome Level/Awesome_Level.tscn" id="7_ycdy4"]
+
+[node name="GameManager" type="Node" node_paths=PackedStringArray("world_2d", "gui")]
+script = ExtResource("1_272bh")
+world_2d = NodePath("World2D")
+gui = NodePath("GUI")
+
+[node name="World2D" type="Node2D" parent="."]
+script = ExtResource("2_5vw27")
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelSelect" parent="GUI" instance=ExtResource("3_kek77")]
+layout_mode = 1
+levels = Array[PackedScene]([ExtResource("4_4c57u"), ExtResource("5_efxa6"), ExtResource("6_dg77c"), ExtResource("7_ycdy4")])

@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://cfnvhdbk7tw3k" path="res://Levels/Tutorial/tutorial.gd" id="1_8758j"]
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/industrial_and_hazards.png" id="2_p2j8t"]
 [ext_resource type="Texture2D" uid="uid://cbxqn4rejymoe" path="res://Assets/four-seasons-tileset.png" id="3_oy3ut"]
-[ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="4_7fxmv"]
-[ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="5_jtpsp"]
+[ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Addable Components/player.tscn" id="4_7fxmv"]
+[ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Addable Components/goal_post.tscn" id="5_jtpsp"]
 [ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="6_g4fk8"]
-[ext_resource type="PackedScene" uid="uid://b154xr1jsd1et" path="res://Scenes/moving_platform.tscn" id="7_cyevu"]
+[ext_resource type="PackedScene" uid="uid://b154xr1jsd1et" path="res://Addable Components/moving_platform.tscn" id="7_cyevu"]
 [ext_resource type="Theme" uid="uid://cde43f8estu7g" path="res://Levels/Tutorial/Tutorial.tres" id="7_i3mr3"]
 [ext_resource type="Texture2D" uid="uid://uygr7pyjtn02" path="res://Assets/arrow.png" id="8_yrnv4"]
-[ext_resource type="PackedScene" uid="uid://br8cai3tivu1e" path="res://Scenes/KillZone.tscn" id="9_sob3p"]
+[ext_resource type="PackedScene" uid="uid://br8cai3tivu1e" path="res://Addable Components/KillZone.tscn" id="9_sob3p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]
 texture = ExtResource("2_p2j8t")

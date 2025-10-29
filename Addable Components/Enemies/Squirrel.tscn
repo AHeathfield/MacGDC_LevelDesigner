@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://c6x7gx5ru6ebk"]
 
-[ext_resource type="Script" uid="uid://bxbjj2idy5xk4" path="res://Scenes/Enemies/squirrel.gd" id="1_7k16g"]
+[ext_resource type="Script" uid="uid://bxbjj2idy5xk4" path="res://Scripts/squirrel.gd" id="1_7k16g"]
 [ext_resource type="Texture2D" uid="uid://5ywomhkqa6f0" path="res://Assets/squirrel_spritesheet.png" id="2_rj8kb"]
-[ext_resource type="PackedScene" uid="uid://br8cai3tivu1e" path="res://Scenes/KillZone.tscn" id="3_ad6pp"]
+[ext_resource type="PackedScene" uid="uid://br8cai3tivu1e" path="res://Addable Components/KillZone.tscn" id="3_ad6pp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ua82p"]
 atlas = ExtResource("2_rj8kb")
