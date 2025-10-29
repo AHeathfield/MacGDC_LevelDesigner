@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://c82vk0iyoofrp"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/Owen/owen.gd" id="1_7los6"]
+[ext_resource type="Script" uid="uid://c2prk5ejl6kbd" path="res://Levels/Owen/owen.gd" id="1_7los6"]
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="2_8yk4s"]
 [ext_resource type="Texture2D" uid="uid://cbxqn4rejymoe" path="res://Assets/four-seasons-tileset.png" id="3_i5asr"]
 [ext_resource type="PackedScene" uid="uid://b154xr1jsd1et" path="res://Scenes/moving_platform.tscn" id="4_doggd"]

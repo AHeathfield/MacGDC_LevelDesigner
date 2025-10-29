@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://dovo7iifeecw0"]
 
 [ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="1_5ilr6"]
-[ext_resource type="Script" uid="uid://b613fj1ofeeif" path="res://Scenes/Levels/Aidan/aidan.gd" id="1_wtngl"]
+[ext_resource type="Script" uid="uid://b613fj1ofeeif" path="res://Levels/Aidan/aidan.gd" id="1_wtngl"]
 [ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="2_6yl3g"]
 [ext_resource type="Texture2D" uid="uid://cbxqn4rejymoe" path="res://Assets/four-seasons-tileset.png" id="2_10inc"]
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="3_10inc"]
