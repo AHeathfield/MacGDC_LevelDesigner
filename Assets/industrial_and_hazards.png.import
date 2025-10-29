@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl1g44kygr1me"
-path="res://.godot/imported/brackeys2025TestTilesheet.png-b838bc97b540494d887520de3c282586.ctex"
+path="res://.godot/imported/industrial_and_hazards.png-910f7e2fd5e96983d8a27d3b44a168c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/brackeys2025TestTilesheet.png"
-dest_files=["res://.godot/imported/brackeys2025TestTilesheet.png-b838bc97b540494d887520de3c282586.ctex"]
+source_file="res://Assets/industrial_and_hazards.png"
+dest_files=["res://.godot/imported/industrial_and_hazards.png-910f7e2fd5e96983d8a27d3b44a168c4.ctex"]
 
 [params]
 

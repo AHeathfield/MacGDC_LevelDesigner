@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://cpghoccrtvqjw"]
+[gd_scene load_steps=9 format=4 uid="uid://cpghoccrtvqjw"]
 
-[ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/brackeys2025TestTilesheet.png" id="2_hbq6r"]
+[ext_resource type="Texture2D" uid="uid://cl1g44kygr1me" path="res://Assets/industrial_and_hazards.png" id="2_hbq6r"]
 [ext_resource type="Texture2D" uid="uid://cbxqn4rejymoe" path="res://Assets/four-seasons-tileset.png" id="3_7kbhc"]
 [ext_resource type="PackedScene" uid="uid://dj44kaa67lmof" path="res://Scenes/player.tscn" id="4_yj0tv"]
 [ext_resource type="PackedScene" uid="uid://b8yytesk3fv1l" path="res://Scenes/goal_post.tscn" id="5_ka7v4"]
 [ext_resource type="PackedScene" uid="uid://2qlo6xd0ay5q" path="res://Scenes/time.tscn" id="6_1448s"]
-[ext_resource type="PackedScene" uid="uid://b154xr1jsd1et" path="res://Scenes/moving_platform.tscn" id="7_ds0tp"]
-[ext_resource type="PackedScene" uid="uid://c6x7gx5ru6ebk" path="res://Scenes/Enemies/Slime.tscn" id="8_uygrl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2g31x"]
 texture = ExtResource("2_hbq6r")
@@ -283,24 +281,6 @@ custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_2g31x")
 sources/1 = SubResource("TileSetAtlasSource_n7rxf")
 
-[sub_resource type="Curve2D" id="Curve2D_1f3oo"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, -87)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_gktnv"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 416, 1)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_tcx56"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 135, 7, 0, 0, 0, 0, -21, 8, 0, 0, 0, 0, -21, -57, 0, 0, 0, 0, 136, -58, 0, 0, 0, 0, 136, 5)
-}
-point_count = 5
-
 [node name="Level Template" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -324,22 +304,3 @@ tile_set = SubResource("TileSet_yix5p")
 position = Vector2(340, 257)
 
 [node name="Time" parent="." instance=ExtResource("6_1448s")]
-
-[node name="Moving Platform" parent="." instance=ExtResource("7_ds0tp")]
-position = Vector2(87, 218)
-curve = SubResource("Curve2D_1f3oo")
-speed_loop_off = 2.0
-
-[node name="Moving Platform2" parent="." instance=ExtResource("7_ds0tp")]
-position = Vector2(87, 81)
-curve = SubResource("Curve2D_gktnv")
-speed_loop_off = 0.5
-
-[node name="Moving Platform3" parent="." instance=ExtResource("7_ds0tp")]
-position = Vector2(-72, 301)
-curve = SubResource("Curve2D_tcx56")
-loop = true
-speed_loop_on = 3.0
-
-[node name="Slime" parent="." instance=ExtResource("8_uygrl")]
-position = Vector2(366, 129)
