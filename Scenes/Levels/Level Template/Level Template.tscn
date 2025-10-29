@@ -343,4 +343,4 @@ curve = SubResource("Curve2D_tcx56")
 loop = true
 
 [node name="Slime" parent="." instance=ExtResource("8_vnkmn")]
-position = Vector2(366, 127)
+position = Vector2(366, 129)

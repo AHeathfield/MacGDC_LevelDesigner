@@ -355,7 +355,7 @@ follow_player = NodePath("../../Player")
 one_shot = true
 
 [node name="Slime" parent="Enemies" instance=ExtResource("7_p2o1k")]
-position = Vector2(488, 208)
+position = Vector2(487, 209)
 
 [node name="Intro" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_pc2g7")
